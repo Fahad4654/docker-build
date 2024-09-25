@@ -1,0 +1,8 @@
+services:
+  ubuntu:
+    image: ubuntu:latest
+    build: .
+    command: /bin/bash/ -c "tail -f /dev/null"
+    ports:
+      - 80:80
+
