@@ -1,5 +1,5 @@
 FROM ubuntu:jammy
-
+MAINTAINER kabirkaife@gmail.com
 RUN apt-get update -y
 RUN apt-get upgrade -y
 
