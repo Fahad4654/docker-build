@@ -3,16 +3,19 @@ name: Docker Image CI
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
 
 jobs:
 
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker compose build
+
+    - name: publish on dockerhub
+      run: |
+        docker login -u fahadkabir -p ${{ secrets.DOCKER_HUB_TOKEN }}
+        docker push fahadkabir/ubuntu:jammy_1.0

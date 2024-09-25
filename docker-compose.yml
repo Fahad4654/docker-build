@@ -1,6 +1,6 @@
 services:
   ubuntu:
-    image: ubuntu:latest
+    image: fahadkabir/ubuntu:jammy_1.0
     build: .
     container_name: ubuntu_jammy
     command: /bin/bash -c "tail -f /dev/null"
