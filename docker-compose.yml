@@ -1,6 +1,6 @@
 services:
   ubuntu:
-    image: ubuntu:1.0
+    image: ${PULL_DOCKER_USERNAME}/ubuntu:${DOCKER_IMAGE_VERSION}
     build: .
     container_name: ubuntu_jammy
     command: /bin/bash -c "tail -f /dev/null"
